@@ -1,7 +1,8 @@
 version: 1.0
-runtime: docker
 build:
-  dockerfile: Dockerfile
+  image: gcp-v2ray-image  # Просто внутреннее имя для образа в процессе сборки
+  docker:
+    dockerfile: Dockerfile # Указывает, что нужно использовать Dockerfile из корня проекта
 run:
   command: /v2ray/v2ray -config=/etc/v2ray/config.json
   port: 8080
